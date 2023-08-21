@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.red {
+  color: red;
+}
+
+.blue {
+  color: blue;
+}
+
+input {
+  display: block;
+  margin: 5px;
+}
