@@ -1,0 +1,14 @@
+p.firstName,
+p.lastName {
+  font-size: 20px;
+  position: absolute;
+  right: 20px;
+}
+
+p.firstName {
+  top: 2px;
+}
+
+p.lastName {
+  top: 20px;
+}

@@ -18,3 +18,9 @@ input {
   display: block;
   margin: 5px;
 }
+
+.parentContainer {
+  width: 88%;
+  background-color: rgba(245, 150, 150, 0.438);
+  padding-block: 5px;
+}

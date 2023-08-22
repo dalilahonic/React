@@ -1,5 +1,6 @@
 // import { useState } from 'react';
-import ExpenseItem from './ExpenseItem';
+import ExpenseItem from './components/ExpenseItem';
+import Card from './components/Card';
 
 // export default function App() {
 //   const [activeIndex, setIndex] = useState(0);
@@ -39,10 +40,16 @@ export default function App() {
   const nums = [12, 43, 63, 19];
   return (
     <>
-      <ExpenseItem title={2 + 3}></ExpenseItem>
-      <ExpenseItem title={99 - 97}></ExpenseItem>
-      <ExpenseItem title={nums[1]}></ExpenseItem>
-      <ExpenseItem title="insurance"></ExpenseItem>
+      <Card className="parentContainer">
+        <ExpenseItem
+          paragraph1="Dalila"
+          paragraph2="Honic"
+          title={2 + 3}
+        ></ExpenseItem>
+        <ExpenseItem title={99 - 97}></ExpenseItem>
+        <ExpenseItem title={nums[1]}></ExpenseItem>
+        <ExpenseItem title="insurance"></ExpenseItem>
+      </Card>
     </>
   );
   // your custom components must start with an upper case character. lower case elements are built in html elements.
