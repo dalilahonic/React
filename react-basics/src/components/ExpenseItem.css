@@ -10,14 +10,16 @@ body {
 
 h1.mainHeading {
   color: #c11172;
+  margin: 0;
   /* color: #D0CE90; */
   /* background-color:  #9092d0,; */
 }
 
 div.main {
   width: 90%;
-  height: 200px;
-  padding-top: 5px;
+  height: 220px;
+  padding-block: 16.8px;
+
   /* background-color: rgb(146, 146, 208); */
   background-image: linear-gradient(
     to right,
@@ -32,4 +34,17 @@ div.main {
 
 h2 {
   color: rgb(43, 43, 43);
+}
+
+button.expense-item-button {
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  height: 24px;
+  width: 82px;
+  font-size: 15.9px;
+}
+
+button:hover {
+  cursor: pointer;
 }
