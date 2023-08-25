@@ -37,11 +37,43 @@ import NewExpense from './components/newExpense/NewExpense';
 
 // components - reausable building blocks in user interface
 
-export default function App() {
+export default function App(props) {
+  const expenses = [
+    {
+      id: 'e1',
+      title: 'Toilet Paper',
+      amount: 94.12,
+      date: new Date(2020, 7, 14),
+    },
+    {
+      id: 'e2',
+      title: 'New TV',
+      amount: 799.49,
+      date: new Date(2021, 2, 12),
+    },
+    {
+      id: 'e3',
+      title: 'Car Insurance',
+      amount: 294.67,
+      date: new Date(2021, 2, 28),
+    },
+    {
+      id: 'e4',
+      title: 'New Desk (Wooden)',
+      amount: 450,
+      date: new Date(2021, 5, 12),
+    },
+  ];
+
   const nums = [12, 43, 63, 19];
+
+  function addExpanseHandler(expense) {
+    console.log(expense);
+  }
+
   return (
     <>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpanseHandler} />
       <Card className='parentContainer'>
         <ExpenseItem
           paragraph1='Dalila'
@@ -56,5 +88,3 @@ export default function App() {
   );
   // your custom components must start with an upper case character. lower case elements are built in html elements.
 }
-
-//08
