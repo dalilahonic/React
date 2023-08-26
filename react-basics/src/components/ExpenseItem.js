@@ -17,19 +17,38 @@ function ExpenseItem(props) {
 
   // useState must always be called inside react component functions and they shouldn't be called inside nested functions
 
+  // return (
+  //   <Card className='main'>
+  //     <h1 className='mainHeading'> Expense Item</h1>
+  //     {/* <h2>{1 + 1}</h2> */}
+  //     {/* <h2>{props.title}</h2> */}
+  //     <h2>{title}</h2>
+  //     <h2>{expenseTitle}</h2>
+  //     <ExplanseInfo
+  //       paragraph1={props.paragraph1}
+  //       paragraph2={props.paragraph2}
+  //     ></ExplanseInfo>
+  // {/* <button onClick={() => console.log('DA')}> Evo Klikni </button> */}
+  // <button className='expense-item-button' onClick={clickHandler}> Click this </button>
+  //   </Card>
+  // );
+
   return (
     <Card className='main'>
-      <h1 className='mainHeading'> Expense Item</h1>
-      {/* <h2>{1 + 1}</h2> */}
-      {/* <h2>{props.title}</h2> */}
+      <h1 className='mainHeading'>Expense Item</h1>
       <h2>{title}</h2>
-      <h2>{expenseTitle}</h2>
+      <h2>Amount: {props.amount}</h2>
       <ExplanseInfo
         paragraph1={props.paragraph1}
         paragraph2={props.paragraph2}
       ></ExplanseInfo>
-      {/* <button onClick={() => console.log('DA')}> Evo Klikni </button> */}
-      <button className='expense-item-button' onClick={clickHandler}> Click this </button>
+      <p>{props.date.toLocaleDateString()}</p>
+      <button
+        className='expense-item-button'
+        onClick={clickHandler}
+      >
+        Click this
+      </button>
     </Card>
   );
 
