@@ -25,7 +25,12 @@ function App() {
   const [cardData, setCardData] = useState(initialCardData);
 
   function handleAddCard(newCard) {
-    setCardData([...cardData, newCard]);
+    setCardData((prevState) => [...prevState, newCard]);
+    // this function that we pass to setCardData will automatically recive previous state snapshot for that state for which you are calling the updating function
+  }
+
+  function handleNewMessage(message) {
+    console.log(message);
   }
 
   return (
@@ -42,9 +47,14 @@ function App() {
           description={data.description}
         ></Card>
       ))}
-      <AddCard onAddCard={handleAddCard} />
+      <AddCard
+        newMessage={handleNewMessage}
+        onAddCard={handleAddCard}
+      />
     </Wrapper>
   );
 }
 
 export default App;
+
+//015
