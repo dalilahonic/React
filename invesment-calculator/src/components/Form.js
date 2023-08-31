@@ -105,7 +105,10 @@ function Form(props) {
           </p>
         </div>
 
-        <Buttons></Buttons>
+        <Buttons
+          onCalculate={handeleSubmit}
+          onReset={props.onReset}
+        ></Buttons>
       </form>
     </>
   );
