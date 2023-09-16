@@ -10,6 +10,7 @@ export default function NewTask(props) {
   function handleSubmit(e) {
     e.preventDefault();
     props.onAddTask(inputValue);
+    setInputValue('');
   }
 
   return (

@@ -1,13 +1,14 @@
-export default function TaskContainer() {
+export default function TaskContainer(props) {
   return (
     <div className='tasksContainer'>
-      <h1> To Do List</h1>
       <ul>
         <li>
           <label>
-            <input type='checkbox' /> Item 1
+            <input type='checkbox' /> {props.task}
           </label>
-          <button> Remove</button>
+          <button onClick={props.onRemoveTask}>
+            Remove
+          </button>
         </li>
       </ul>
     </div>
