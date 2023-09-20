@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri,
+    'Trebuchet MS', sans-serif;
+}
+
+div.header {
+  width: 100%;
+  height: 12vh;
+  background-color: darkblue;
+  display: flex;
+  position: relative;
+}
+
+.header h1 {
+  align-self: center;
+  margin-left: 20px;
+}
+
+div.header button.yourCart {
+  width: 12%;
+  height: 60%;
+  align-self: center;
+  background-color: red;
+  position: absolute;
+  right: 100px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 22px;
+  border: 0.1px solid black;
+}
+
+.yourCart div {
+  width: 36px;
+  height: 25px;
+  background-color: darkmagenta;
+  border-radius: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline: 6px;
+}
+
+.mealsContainer {
+  width: 80%;
+  background-color: rgb(193, 193, 176);
+  display: block;
+  margin: auto;
+  border-radius: 20px;
+  padding: 12px;
+  margin-top: 10px;
+}
+
+.mealContainer {
+  width: 96%;
+  height: 120px;
+  display: block;
+  margin: auto;
+  margin-block: 10px;
+  position: relative;
+}
+
+.mealContainer button.addNewItemBtn {
+  background-color: brown;
+  position: absolute;
+  right: 0;
+  bottom: 30px;
+  width: 124px;
+  height: 38px;
+  border-radius: 10px;
+  border: 0.2px solid black;
+  font-size: 18px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.mealContainer::after {
+  content: '';
+  width: 90%;
+  height: 0.3px;
+  background-color: black;
+  position: absolute;
+  bottom: 10px;
+}
+
+.mealContainer h1 {
+  font-size: 24px;
+  margin-block: 3px;
+}
+
+.mealsContainer h3 {
+  font-style: italic;
+  font-weight: 400;
+  margin-block: 3px;
+}
+
+.mealContainer h2 {
+  color: rgb(120, 9, 31);
+  margin-block: 3px;
+}
+
+.mealContainer h4 {
+  font-size: 18px;
+  position: absolute;
+  right: 70px;
+  bottom: 76px;
+}
+
+.mealContainer .amountContainer {
+  position: absolute;
+  right: 10px;
+  bottom: 76px;
+  width: 52px;
+  height: 24px;
+  border: 0.5px solid black;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
