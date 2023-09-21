@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Jost&family=Merienda&family=Mulish&family=Nanum+Pen+Script&display=swap');
+
+div.header {
+  width: 100%;
+  height: 12vh;
+  background-color: rgb(112, 112, 197);
+  display: flex;
+  position: relative;
+}
+
+.header h1 {
+  align-self: center;
+  margin-left: 20px;
+  font-family: 'Merienda', sans-serif;
+}
+
+div.header button.yourCart {
+  width: 14%;
+  height: 60%;
+  align-self: center;
+  background-color: rgb(172, 16, 47);
+  position: absolute;
+  right: 100px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 22px;
+  border: 0.4px solid rgb(161, 161, 161);
+  color: white;
+}
+
+button.yourCart i {
+  margin-inline: 10px;
+  font-size: 16px;
+}
+
+.yourCart div {
+  width: 36px;
+  height: 25px;
+  background-color: rgb(204, 94, 116);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline: 8px;
+}

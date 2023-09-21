@@ -1,0 +1,10 @@
+.mealsContainer {
+    width: 80%;
+    background-color: rgb(193, 193, 176);
+    display: block;
+    margin: auto;
+    border-radius: 20px;
+    padding: 12px;
+    margin-top: 10px;
+  }
+  

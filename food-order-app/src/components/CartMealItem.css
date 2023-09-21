@@ -1,0 +1,38 @@
+.mealItem {
+  display: block;
+  width: 90%;
+  margin: auto;
+  margin-block: 40px;
+  position: relative;
+}
+
+.mealItem::after {
+  content: '';
+  background-color: rgb(172, 16, 47);
+  width: 90%;
+  height: 0.5px;
+  position: absolute;
+  margin-top: 16px;
+}
+
+.mealItem h1 {
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.mealItem h2 {
+  color: rgb(172, 16, 47);
+}
+
+.mealItem div.quantity {
+  width: 50px;
+  height: 30px;
+  border-radius: 7px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 270px;
+  top: 30px;
+}
