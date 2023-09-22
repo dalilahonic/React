@@ -15,8 +15,11 @@ function Cart(props) {
 
   function handleOnClick() {
     props.onOrder();
+    props.resetAmount();
     setOrderP(true);
   }
+
+  console.log(props.cartItems);
 
   return (
     <div className='overlay'>
@@ -27,6 +30,7 @@ function Cart(props) {
             price={item.price}
             quantity={item.quantity}
             key={index}
+            cartItems={props.cartItems}
           />
         ))}
 

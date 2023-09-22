@@ -81,9 +81,10 @@ export default function App() {
 
   function handleOrder() {
     setCartItems([]);
+    setCartAmount(0);
   }
 
-  console.log(cartItems);
+  console.log(mealsInfo);
 
   return (
     <>
@@ -102,7 +103,6 @@ export default function App() {
           />
         ))}
       </MealsContainer>
-
       {cartOpen && (
         <Cart
           cartItems={cartItems}
@@ -117,3 +117,4 @@ export default function App() {
 // order button
 //overlay scroll
 // - + in cart
+//cartItems.quantity

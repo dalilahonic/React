@@ -36,3 +36,31 @@
   left: 270px;
   top: 30px;
 }
+
+.mealItem div.minus,
+.mealItem div.plus {
+  position: absolute;
+  right: 0;
+  width: 44px;
+  height: 30px;
+  border: 2px solid rgb(172, 16, 47);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+.mealItem div.minus:hover,
+.mealItem div.plus:hover {
+  cursor: pointer;
+}
+
+.mealItem div.minus {
+  bottom: 20px;
+  right: 50px;
+}
+
+.mealItem div.plus {
+  bottom: 20px;
+}
