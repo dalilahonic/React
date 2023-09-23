@@ -53,8 +53,10 @@ export default function App() {
   const [cartAmount, setCartAmount] = useState(0);
   const [cartItems, setCartItems] = useState([]);
   const [cartOpen, setCartOpen] = useState(false);
+  const [ordered, setOrdered] = useState(false);
 
   function handleAddNewItem(meal) {
+    setOrdered(false);
     setCartAmount((prev) => prev + 1);
     const isMealInCart = cartItems.some(
       (item) => item.mealName === meal.mealName
@@ -74,6 +76,13 @@ export default function App() {
       ]);
     }
   }
+  mealsInfo.forEach((el) => {
+    cartItems.forEach((item) => {
+      if (el.mealName === item.mealName) {
+        el.quantity = item.quantity;
+      }
+    });
+  });
 
   function handleClose() {
     setCartOpen(false);
@@ -82,9 +91,20 @@ export default function App() {
   function handleOrder() {
     setCartItems([]);
     setCartAmount(0);
+    setOrdered(true);
   }
 
-  console.log(mealsInfo);
+  function handleAddNewCartItem(event) {
+    if (event === '+') {
+      setCartAmount((prev) => prev + 1);
+    } else {
+      setCartAmount((prev) => prev - 1);
+    }
+  }
+
+  if (ordered) {
+    mealsInfo.forEach((el) => (el.quantity = 0));
+  }
 
   return (
     <>
@@ -100,21 +120,21 @@ export default function App() {
             price={meal.price}
             key={index}
             onAddNewItem={handleAddNewItem}
+            isOrdered={ordered}
+            amount={meal.quantity ?? 0}
           />
         ))}
+        {console.log(cartItems)}
       </MealsContainer>
       {cartOpen && (
         <Cart
           cartItems={cartItems}
+          setCartItems={setCartItems}
           onClose={handleClose}
           onOrder={handleOrder}
+          onAddNewCartItem={handleAddNewCartItem}
         />
       )}
     </>
   );
 }
-
-// order button
-//overlay scroll
-// - + in cart
-//cartItems.quantity

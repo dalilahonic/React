@@ -1,8 +1,8 @@
-import { useState } from 'react';
+// import { useEffect, useState } from 'react';
 import './MealContainer.css';
 
 function MealContainer(props) {
-  const [amount, setAmount] = useState(0);
+  // const [amount, setAmount] = useState(0);
 
   const mealOrdered = {
     mealName: props.mealName,
@@ -11,9 +11,15 @@ function MealContainer(props) {
   };
 
   function handleClick() {
-    setAmount((prev) => prev + 1);
+    // setAmount((prev) => prev + 1);
     props.onAddNewItem(mealOrdered);
   }
+
+  // useEffect(() => {
+  //   if (props.isOrdered) {
+  //     props.amount = 0;
+  //   }
+  // }, [props.isOrdered]);
 
   return (
     <main>
@@ -28,7 +34,9 @@ function MealContainer(props) {
           + Add
         </button>
         <h4>Amount</h4>
-        <div className='amountContainer'>{amount}</div>
+        <div className='amountContainer'>
+          {props.amount}
+        </div>
       </div>
     </main>
   );
