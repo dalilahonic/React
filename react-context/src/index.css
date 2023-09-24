@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 70px;
+}
+
+ul {
+  margin-block: 50px;
+}
+
+li {
+  font-size: 20px;
+  margin: 7px;
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+h1.red {
+  color: red;
+}
+
+h1.blue {
+  color: blue;
+}
+
+h1.violet {
+  color: violet;
+}
+
+h1.green {
+  color: green;
+}
+
+h1.orange {
+  color: orange;
+}
+
+h1.pink {
+  color: pink;
+}
+
+h1.gill-sans{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1.times-new-roman {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
