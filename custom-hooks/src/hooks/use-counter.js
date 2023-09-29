@@ -13,7 +13,7 @@ function useCounter(plus = true) {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [plus]);
 
   return counter;
 }
