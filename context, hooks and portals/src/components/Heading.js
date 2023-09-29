@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import {
   MyContext,
-  headingToggleFunction,
+  // headingToggleFunction,
 } from '../context/MyContext';
 import { headingContext } from '../context/MyContext';
 
