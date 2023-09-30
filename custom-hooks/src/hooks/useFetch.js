@@ -1,12 +1,11 @@
 import { useState, useCallback } from 'react';
 
-function useFetch(applyData) {
+const useFetch = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  //   const [tasks, setTasks] = useState([]);
 
   const sendRequest = useCallback(
-    async (requestConfig) => {
+    async (requestConfig, applyData) => {
       setIsLoading(true);
       setError(null);
       try {
@@ -29,18 +28,18 @@ function useFetch(applyData) {
         const data = await response.json();
         applyData(data);
       } catch (err) {
-        setError(err.message || 'something went wrong');
+        setError(err.message || 'Something went wrong!');
       }
       setIsLoading(false);
     },
-    [applyData]
+    []
   );
 
   return {
-    isLoading: isLoading,
-    error: error,
-    sendRequest: sendRequest,
+    isLoading,
+    error,
+    sendRequest,
   };
-}
+};
 
 export default useFetch;

@@ -1,6 +1,6 @@
-import useFetch from '../../hooks/useFetch';
 import Section from '../UI/Section';
 import TaskForm from './TaskForm';
+import useFetch from '../../hooks/useFetch';
 
 const NewTask = (props) => {
   const {
@@ -8,6 +8,7 @@ const NewTask = (props) => {
     error,
     sendRequest: sendTaskRequest,
   } = useFetch();
+
   const createTask = (taskText, taskData) => {
     const generatedId = taskData.name;
     const createdTask = { id: generatedId, text: taskText };
