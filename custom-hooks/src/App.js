@@ -31,7 +31,7 @@ function App() {
     sendRequest({
       url: 'https://react-10d3f-default-rtdb.firebaseio.com/tasks.json',
     });
-  }, []);
+  }, [sendRequest]);
 
   const taskAddHandler = (task) => {
     setTasks((prevTasks) => prevTasks.concat(task));
