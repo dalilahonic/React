@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const SimpleInput = (props) => {
   const [enteredName, setEnteredName] = useState('');
@@ -7,68 +7,66 @@ const SimpleInput = (props) => {
   const [enteredNameTouched, setEnteredNameTouched] =
     useState(false);
 
-    const enteredNameIsValid = 
+  // const enteredNameIsValid =
 
+  useEffect(() => {
+    if (enteredNameIsValid)
+      console.log('entered name is valied');
+  }, [enteredNameIsValid]);
 
+  // const nameInputRef = useRef();
 
-//   useEffect(() => {
-//     if (enteredNameIsValid)
-//       console.log('entered name is valied');
-//   }, [enteredNameIsValid]);
+  function nameInputChangeHandler(event) {
+    setEnteredName(event.target.value);
 
-//   const nameInputRef = useRef();
+    if (event.target.value.trim().length >= 1) {
+      setEnteredNameIsValid(true);
+    }
+  }
 
-//   function nameInputChangeHandler(event) {
-//     setEnteredName(event.target.value);
+  function nameInputBlurHandler() {
+    setEnteredNameTouched(true);
 
-//     if (event.target.value.trim().length >= 1) {
-//       setEnteredNameIsValid(true);
-//     }
-//   }
+    if (enteredName.trim().length < 1) {
+      setEnteredNameIsValid(false);
+    }
+  }
 
-//   function nameInputBlurHandler() {
-//     setEnteredNameTouched(true);
+  function formSubmissionHandler(event) {
+    event.preventDefault();
 
-//     if (enteredName.trim().length < 1) {
-//       setEnteredNameIsValid(false);
-//     }
-//   }
+    setEnteredNameTouched(true);
 
-//   function formSubmissionHandler(event) {
-//     event.preventDefault();
+    if (enteredName.trim().length < 1) {
+      setEnteredNameIsValid(false);
+      return;
+    } else {
+      setEnteredNameIsValid(true);
+    }
 
-//     setEnteredNameTouched(true);
+    console.log(enteredName);
+    setEnteredName('');
 
-//     if (enteredName.trim().length < 1) {
-//       setEnteredNameIsValid(false);
-//       return;
-//     } else {
-//       setEnteredNameIsValid(true);
-//     }
+    // const enteredValue = nameInputRef.current.value;
+    // console.log(enteredValue);
 
-//     console.log(enteredName);
-//     setEnteredName('');
+    // not ideal
+    // nameInputRef.current.value = '';
+  }
 
-//     // const enteredValue = nameInputRef.current.value;
-//     // console.log(enteredValue);
+  const nameInputIsInvalid =
+    !enteredNameIsValid && enteredNameTouched;
 
-//     // not ideal
-//     // nameInputRef.current.value = '';
-//   }
-
-//   const nameInputIsInvalid =
-//     !enteredNameIsValid && enteredNameTouched;
-
-//   const nameInputClasses = nameInputIsInvalid
-//     ? 'form-control invalid'
-//     : 'form-control';
+  const nameInputClasses = nameInputIsInvalid
+    ? 'form-control invalid'
+    : 'form-control';
 
   return (
     <form onSubmit={formSubmissionHandler}>
       <div className={nameInputClasses}>
         <label htmlFor='name'>Your Name</label>
         <input
-        //   ref={nameInputRef}
+          //   ref={nameInputRef}
           type='text'
           id='name'
           onChange={nameInputChangeHandler}
