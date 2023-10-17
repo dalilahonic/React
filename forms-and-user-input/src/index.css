@@ -78,7 +78,7 @@ button:active {
   background-color: #33059e;
   border-color: #33059e;
 }
-\= button:disabled,
+ button:disabled,
 button:disabled:hover {
   background-color: #ccc;
   color: #292929;
