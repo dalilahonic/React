@@ -6,19 +6,39 @@ function CartMealItem(props) {
     const index = props.cartItems.findIndex(
       (el) => el.mealName === props.mealName
     );
+
+    //.........+
     if (e.target.innerText === '+') {
       props.setCartItems(
         (prev) => [...prev],
         props.cartItems[index].quantity++
       );
-    } else {
-      props.setCartItems(
-        (prev) => [...prev],
-        props.cartItems[index].quantity--
-      );
     }
-    // console.log(props.mealName);
 
+    //..................-
+    else {
+      if (props.cartItems[index].quantity > 1) {
+        props.setCartItems(
+          (prev) => [...prev],
+          props.cartItems[index].quantity--
+        );
+      } else {
+        props.setCartItems((prev) => {
+          return prev
+            .slice(0, index)
+            .concat(prev.slice(index + 1));
+        });
+        props.setMealsInfo((prev) => {
+          const cartItem = props.cartItems[index].mealName;
+          const itemIndex = prev.find(
+            (item) => item.mealName === cartItem
+          );
+          const newItems = [...prev];
+          newItems[itemIndex].quantity = 0;
+          return newItems;
+        });
+      }
+    }
     props.onAddNewCartItem(e.target.innerText);
   }
 

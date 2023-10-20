@@ -30,12 +30,12 @@ function Cart(props) {
             cartItems={props.cartItems}
             setCartItems={props.setCartItems}
             onAddNewCartItem={props.onAddNewCartItem}
+            setMealsInfo={props.setMealsInfo}
           />
         ))}
 
         {!orderP || (
           <div>
-            {' '}
             <p> Thank you for ordering!</p>
             <button
               onClick={props.onClose}
