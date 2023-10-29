@@ -9,3 +9,12 @@
 button:hover {
   cursor: pointer;
 }
+
+p.loading,
+p.error {
+  text-align: center;
+}
+
+p.error {
+  color: red;
+}

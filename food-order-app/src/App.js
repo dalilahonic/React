@@ -3,6 +3,8 @@ import Header from './components/Header';
 import MealContainer from './components/MealContainer';
 import MealsContainer from './components/MealsContainer';
 import Cart from './components/Cart';
+import useFetch from './hooks/useFetch';
+import useSetData from './hooks/useSetData';
 
 export default function App() {
   const [mealsInfo, setMealsInfo] = useState([]);
@@ -10,29 +12,27 @@ export default function App() {
   const [cartItems, setCartItems] = useState([]);
   const [cartOpen, setCartOpen] = useState(false);
   const [ordered, setOrdered] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [httpError, setHttpError] = useState();
 
-  useEffect(() => {
-    async function fetchMeals() {
-      const response = await fetch(
-        'https://food-order-41be5-default-rtdb.firebaseio.com/meals.json'
-      );
+  useFetch(setIsLoading, setMealsInfo, setHttpError);
+  useSetData(mealsInfo, cartItems);
 
-      const data = await response.json();
-      setMealsInfo(data);
-    }
+  if (isLoading) {
+    return (
+      <section>
+        <p className='loading'>Loading...</p>
+      </section>
+    );
+  }
 
-    fetchMeals();
-  }, []);
-
-  useEffect(() => {
-    mealsInfo.forEach((el) => {
-      cartItems.forEach((item) => {
-        if (el.mealName === item.mealName) {
-          el.quantity = item.quantity;
-        }
-      });
-    });
-  });
+  if (httpError) {
+    return (
+      <section>
+        <p className='error'>{httpError}</p>
+      </section>
+    );
+  }
 
   function handleAddNewItem(meal) {
     setOrdered(false);
