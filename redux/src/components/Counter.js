@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import classes from './Counter.module.css';
+import { counterActions } from '../store';
 
 const Counter = () => {
   const dispatch = useDispatch();
@@ -10,19 +11,34 @@ const Counter = () => {
   // we pass the function to useSelector and that function will be executed by redux. a function will receive state and then we return the part of the state that we want to excract.
   // components is updated whenever the state in the redux store is changed
 
+  // const incrementHandler = () => {
+  //   dispatch({ type: 'increment' });
+  // };
+
   const incrementHandler = () => {
-    dispatch({ type: 'increment' });
+    dispatch(counterActions.increment());
   };
 
+  // const increaseHandler = () => {
+  //   dispatch({ type: 'increase', amount: 5 });
+  // };
   const increaseHandler = () => {
-    dispatch({ type: 'increase', amount: 5 });
+    dispatch(counterActions.increase(5)); // {type: unique id, payload: 5}
   };
+
+  // const decrementHandler = () => {
+  //   dispatch({ type: 'decrement' });
+  // };
   const decrementHandler = () => {
-    dispatch({ type: 'decrement' });
+    dispatch(counterActions.decrement());
   };
+
+  // const toggleCounterHandler = () => {
+  //   dispatch({ type: 'toggle' });
+  // };
 
   const toggleCounterHandler = () => {
-    dispatch({ type: 'toggle' });
+    dispatch(counterActions.toggleCounter());
   };
 
   return (
