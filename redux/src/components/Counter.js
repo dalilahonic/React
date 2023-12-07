@@ -1,12 +1,14 @@
 import { useSelector, useDispatch } from 'react-redux';
 import classes from './Counter.module.css';
-import { counterActions } from '../store';
+import { counterActions } from '../store/counter';
 
 const Counter = () => {
   const dispatch = useDispatch();
-  const counter = useSelector((state) => state.counter);
+  const counter = useSelector(
+    (state) => state.counter.counter
+  );
   const showCounter = useSelector(
-    (state) => state.showCounter
+    (state) => state.counter.showCounter
   );
   // we pass the function to useSelector and that function will be executed by redux. a function will receive state and then we return the part of the state that we want to excract.
   // components is updated whenever the state in the redux store is changed
