@@ -1,3 +1,24 @@
+import { Link } from 'react-router-dom';
+
+const PRODUCTS = [
+  { id: 'p1', title: 'Product 1' },
+  { id: 'p2', title: 'Product 2' },
+  { id: 'p3', title: 'Product 3' },
+];
+
 export default function Products() {
-  return <h1>Products</h1 >;
+  return (
+    <>
+      <h1>Products</h1>
+      <ul>
+        {PRODUCTS.map((el) => {
+          return (
+            <li key={el.id}>
+              <Link to={el.id}>{el.title}</Link>
+            </li>
+          );
+        })}
+      </ul>
+    </>
+  );
 }
