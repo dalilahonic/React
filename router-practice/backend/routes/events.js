@@ -1,6 +1,12 @@
 const express = require('express');
 
-const { getAll, get, add, replace, remove } = require('../data/event');
+const {
+  getAll,
+  get,
+  add,
+  replace,
+  remove,
+} = require('../data/event');
 const {
   isValidText,
   isValidDate,
@@ -50,14 +56,17 @@ router.post('/', async (req, res, next) => {
 
   if (Object.keys(errors).length > 0) {
     return res.status(422).json({
-      message: 'Adding the event failed due to validation errors.',
+      message:
+        'Adding the event failed due to validation errors.',
       errors,
     });
   }
 
   try {
     await add(data);
-    res.status(201).json({ message: 'Event saved.', event: data });
+    res
+      .status(201)
+      .json({ message: 'Event saved.', event: data });
   } catch (error) {
     next(error);
   }
@@ -86,7 +95,8 @@ router.patch('/:id', async (req, res, next) => {
 
   if (Object.keys(errors).length > 0) {
     return res.status(422).json({
-      message: 'Updating the event failed due to validation errors.',
+      message:
+        'Updating the event failed due to validation errors.',
       errors,
     });
   }
