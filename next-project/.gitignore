@@ -38,4 +38,4 @@ next-env.d.ts
 .env
 
 # Ignore the 'api' folder
-/api/
+/pages/api/
